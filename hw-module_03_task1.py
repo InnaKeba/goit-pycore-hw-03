@@ -10,4 +10,6 @@ def get_days_from_today(date):
     except ValueError:
         return"Помилка: Неправильний формат дати. Використовуйте формат'РРРР-ММ-ДД'."
 print(get_days_from_today("2021-10-09"))
+print(get_days_from_today("2025-06-01"))
 print(get_days_from_today("21-10-09")) #Перевірка except
+print(get_days_from_today("2021/01/09")) #Перевірка except
