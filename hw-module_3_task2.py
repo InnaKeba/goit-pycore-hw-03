@@ -1,3 +1,4 @@
+#Завдання 2. Лотерейні числа
 import random
 def get_numbers_ticket(min_number, max_number, quantity):
     if (not isinstance(min_number, int) or

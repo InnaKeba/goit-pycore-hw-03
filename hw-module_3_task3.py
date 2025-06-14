@@ -1,3 +1,4 @@
+#Завдання 3. Нормалізація телефонних номерів для SMS-розсилки
 import re
 def normalize_phone(phone_number):
     cleaned_number = re.sub(r"[^+\d]", "", phone_number.strip())
