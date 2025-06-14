@@ -6,7 +6,7 @@ def get_upcoming_birthdays(users):
     bd_date = today + timedelta(days=7)
     get_upcoming_birthdays = []
     for user in users:
-        birthday = datetime.strptime(user['birthday'], '%Y-%m-%d').date()
+        birthday = datetime.strptime(user['birthday'], '%Y.%m.%d').date()
         birthday_this_year = birthday.replace(year=today.year)
         if  birthday_this_year < today:
             birthday_this_year = birthday.replace(year=today.year + 1)
@@ -16,7 +16,13 @@ def get_upcoming_birthdays(users):
             get_upcoming_birthdays.append({'name': user['name'],'birthday': birthday_this_year.strftime('%Y-%m-%d')})
     return get_upcoming_birthdays
 
-users = [{"name": "John Doe", "birthday": "1985.01.23"},
-    {"name": "Jane Smith", "birthday": "1990.01.27"}]
+users = [{"name": "John Doe", "birthday": "1985.06.19"},
+    {"name": "Jane Smith", "birthday": "1990.06.21"}]
 get_upcoming_birthdays = get_upcoming_birthdays(users)
 print("Список привітань на цьому тижні: ", get_upcoming_birthdays)
+
+"""Критерії оцінювання:
+Актуальність та коректність визначення днів народження на 7 днів вперед. - done
+Правильність обробки випадків, коли дні народження припадають на вихідні.- done
+Читабельність та структурованість коду.
+"""
